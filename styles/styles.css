@@ -1124,9 +1124,38 @@ button.main-btn {
 }
 
 .read-more-btn:hover {
-  background-color: #0056b3;
+  background-color: #ec4b0b;
 }
 
+#ask-me-anything {
+        margin-top: 60px;
+    }
 
+    .ask-container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .ask-form .input-control {
+        margin-bottom: 15px;
+    }
+
+    .ask-form input,
+    .ask-form textarea {
+        width: 100%;
+        padding: 12px;
+        background-color: #1e1e1e;
+        color: white;
+        border: 1px solid #3e3e3e;
+        border-radius: 8px;
+        font-size: 1rem;
+        resize: none;
+    }
+
+    .ask-form input:focus,
+    .ask-form textarea:focus {
+        border-color: #00ff99;
+        outline: none;
+    }
 
 /*# sourceMappingURL=styles.css.map */
