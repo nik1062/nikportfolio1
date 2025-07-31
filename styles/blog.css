@@ -1,0 +1,107 @@
+/* Blog Page CSS - nikportfolio1/styles/blog.css */
+
+body {
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background: #f9fafc;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    border-radius: 12px;
+    padding: 40px 32px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Merriweather', serif;
+    color: #2a3a5e;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #e0e7ef;
+    padding-bottom: 0.3em;
+}
+
+h2 {
+    font-size: 2em;
+    border-left: 4px solid #6c63ff;
+    padding-left: 0.5em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+p {
+    margin: 1em 0;
+}
+
+a {
+    color: #6c63ff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover {
+    color: #4834d4;
+    text-decoration: underline;
+}
+
+blockquote {
+    background: #f0f4ff;
+    border-left: 4px solid #6c63ff;
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    font-style: italic;
+    color: #444;
+}
+
+ul, ol {
+    margin: 1em 0 1em 2em;
+}
+
+code, pre {
+    background: #f4f6fa;
+    color: #2a3a5e;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    border-radius: 6px;
+}
+
+pre {
+    padding: 1em;
+    overflow-x: auto;
+    margin: 1.5em 0;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1em 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e0e7ef;
+    margin: 2em 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 16px 8px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+}
