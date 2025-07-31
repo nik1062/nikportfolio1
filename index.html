@@ -622,24 +622,7 @@
             </div>
         </form>
     </div>
-</section>
-<div id="chatbot-toggle" style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
-  <button onclick="toggleChatbot()" style="background-color: #28a745; color: white; padding: 12px 20px; border-radius: 50%; border: none; box-shadow: 0 0 10px rgba(0,0,0,0.2); font-size: 20px;">
-    💬
-  </button>
-</div>
-
-<!-- Chatbot Window -->
-<div id="chatbot" style="display: none; position: fixed; bottom: 100px; right: 30px; width: 300px; max-height: 400px; background: #fff; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.3); overflow: hidden; z-index: 10000;">
-  <div style="background-color: #28a745; color: white; padding: 10px; text-align: center; font-weight: bold;">
-    Chat with Me 🧠
-  </div>
-  <div id="chat-messages" style="padding: 10px; height: 250px; overflow-y: auto; font-size: 14px;"></div>
-  <div style="padding: 10px; border-top: 1px solid #ddd;">
-    <input type="text" id="user-input" placeholder="Type a message..." style="width: 80%; padding: 6px; border: 1px solid #ccc; border-radius: 4px;">
-    <button onclick="sendMessage()" style="background: #28a745; color: white; border: none; padding: 6px 10px; border-radius: 4px;">Send</button>
-  </div>
-
+       </section>
 
         <section class="container contact fade-up" id="contact">
             <div class="contact-container">
@@ -768,33 +751,36 @@
     </div>
     <script src="app.js"></script>
 <script>
-    function toggleChatbot() {
-    const chatbot = document.getElementById("chatbot");
-    chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+(function(){
+  if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+    window.chatbase=(...arguments)=>{
+      if(!window.chatbase.q){
+        window.chatbase.q=[]
+      }
+      window.chatbase.q.push(arguments)
+    };
+    window.chatbase=new Proxy(window.chatbase,{
+      get(target,prop){
+        if(prop==="q"){return target.q}
+        return(...args)=>target(prop,...args)
+      }
+    })
   }
-
-  function sendMessage() {
-    const input = document.getElementById("user-input");
-    const message = input.value.trim();
-    if (message) {
-      const chatBox = document.getElementById("chat-messages");
-      chatBox.innerHTML += `<div style='margin-bottom: 10px;'><strong>You:</strong> ${message}</div>`;
-      input.value = "";
-
-      // Simulated Bot Response (you can replace with OpenAI API later)
-      setTimeout(() => {
-        let reply = "Thanks for your message! I'll get back to you soon.";
-        if (message.toLowerCase().includes("project")) {
-          reply = "You can view my projects in the Portfolio section above!";
-        } else if (message.toLowerCase().includes("contact")) {
-          reply = "You can contact me via the Contact section or this chat!";
-        }
-        chatBox.innerHTML += `<div style='margin-bottom: 10px;'><strong>Bot:</strong> ${reply}</div>`;
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }, 500);
-    }
+  const onLoad=function(){
+    const script=document.createElement("script");
+    script.src="https://www.chatbase.co/embed.min.js";
+    script.id="6zeoaRnwr_1RX2v1O4vyA";  // <- This is where your chatbot is linked
+    script.domain="www.chatbase.co";
+    document.body.appendChild(script)
+  };
+  if(document.readyState==="complete"){
+    onLoad()
+  }else{
+    window.addEventListener("load",onLoad)
   }
+})();
 </script>
+
 </body>
 
 
