@@ -105,3 +105,35 @@ hr {
         font-size: 1.3em;
     }
 }
+.read-more-btn {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-secondary);
+  color: var(--color-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: var(--color-grey-5);
+  transform: translateY(-2px);
+}
+
+.read-more-btn .btn-icon {
+  margin-left: 0.6rem;
+  background-color: var(--color-secondary);
+  padding: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+}
+
+.read-more-btn .btn-icon i {
+  font-size: 0.8rem;
+  color: var(--color-white);
+}

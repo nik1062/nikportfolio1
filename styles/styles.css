@@ -385,69 +385,8 @@ section {
   background-color: var(--color-grey-5);
   transform: translateX(-50%);
 }
+/* Base button style (you already have this) */
 
-/*Timeline*/
-.timeline {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
-  padding-bottom: 3rem;
-}
-
-.timeline .timeline-item {
-  position: relative;
-  padding-left: 3rem;
-  border-left: 1px solid var(--color-grey-5);
-}
-
-.timeline .timeline-item .tl-icon {
-  position: absolute;
-  left: -27px;
-  top: 0;
-  background-color: var(--color-secondary);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.timeline .timeline-item .tl-icon i {
-  font-size: 1.3rem;
-}
-
-.timeline .timeline-item .tl-duration {
-  padding: 0.2rem 0.6rem;
-  background-color: var(--color-grey-5);
-  border-radius: 15px;
-  display: inline-block;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.timeline .timeline-item h5 {
-  padding: 1rem 0;
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-.timeline .timeline-item h5 span {
-  color: var(--color-grey-2);
-  font-weight: 500;
-  font-size: 1.2rem;
-}
-
-.timeline .timeline-item p {
-  color: var(--color-grey-2);
-}
-
-.port-text {
-  padding: 2rem 0;
-  text-align: center;
-}
 
 .portfolios {
   display: grid;
@@ -1099,34 +1038,6 @@ section {
   }
 }
 
-button.main-btn {
-  background: none;
-  border: 1px solid var(--color-secondary);
-  border-radius: 30px;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: pointer;
-  padding: 0;
-}
-
-.read-more-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 6px 12px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background 0.3s ease;
-}
-
-.read-more-btn:hover {
-  background-color: #ec4b0b;
-}
-
 #ask-me-anything {
         margin-top: 60px;
     }
@@ -1157,5 +1068,49 @@ button.main-btn {
         border-color: #00ff99;
         outline: none;
     }
+.read-more-btn {
+  border-radius: 20px;
+  color: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  position: relative;
+  border: 1px solid var(--color-secondary);
+  display:-webkit-inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  overflow: hidden;
+  height: 40px;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  gap: 0.6rem;
+}
+
+.read-more-btn .btn-text {
+  padding:0 2rem;
+}
+
+.read-more-btn .btn-icon {
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn .btn-icon i {
+  font-size: 0.8rem;
+  color: var(--color-white);
+}
+
+.read-more-btn:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.read-more-btn:hover .btn-icon {
+  transform: translateX(3px);
+}
 
 /*# sourceMappingURL=styles.css.map */
