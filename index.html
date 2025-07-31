@@ -622,6 +622,23 @@
             </div>
         </form>
     </div>
+    <div id="chatbot-toggle" style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
+  <button onclick="toggleChatbot()" style="background-color: #28a745; color: white; padding: 12px 20px; border-radius: 50%; border: none; box-shadow: 0 0 10px rgba(0,0,0,0.2); font-size: 20px;">
+    💬
+  </button>
+</div>
+
+<!-- Chatbot Window -->
+<div id="chatbot" style="display: none; position: fixed; bottom: 100px; right: 30px; width: 300px; max-height: 400px; background: #fff; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.3); overflow: hidden; z-index: 10000;">
+  <div style="background-color: #28a745; color: white; padding: 10px; text-align: center; font-weight: bold;">
+    Chat with Me 🧠
+  </div>
+  <div id="chat-messages" style="padding: 10px; height: 250px; overflow-y: auto; font-size: 14px;"></div>
+  <div style="padding: 10px; border-top: 1px solid #ddd;">
+    <input type="text" id="user-input" placeholder="Type a message..." style="width: 80%; padding: 6px; border: 1px solid #ccc; border-radius: 4px;">
+    <button onclick="sendMessage()" style="background: #28a745; color: white; border: none; padding: 6px 10px; border-radius: 4px;">Send</button>
+  </div>
+</div>
 </section>
 
 
