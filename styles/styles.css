@@ -464,7 +464,7 @@ section {
 .portfolios .portfolio-item .hover-items {
   width: 100%;
   height: 100%;
-  background-color: var(--color-secondary);
+  background-color:#27AE60;
   position: absolute;
   left: 0;
   top: 0;
@@ -716,58 +716,100 @@ section {
   justify-content: flex-start;
 }
 
-/*Independed components*/
-.btn-con {
-  display: flex;
-  align-self: flex-start;
+/* Reset + base style for all button types */
+/* Make all other buttons match the Download CV hover & shape */
+.read-more-btn,
+.port-btn,
+.portfolio-btn,
+.contact-btn,
+.ask-btn {
+    border-radius: 30px; /* pill shape */
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-secondary);
+    z-index: 1;
 }
 
-.main-btn {
+/* Hover fill effect - same as Download CV */
+
+/* Apply main-btn styling to all buttons */
+.main-btn,
+.read-more-btn,
+.repo-btn,
+.contact-btn,
+.ask-btn {
   border-radius: 30px;
   color: inherit;
   font-weight: 600;
+  font-size: 0.85rem;
   position: relative;
   border: 1px solid var(--color-secondary);
-  display: flex;
-  align-self: flex-start;
+  display: inline-flex; /* inline so it only takes needed space */
   align-items: center;
   overflow: hidden;
+  height: 36px;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  width: auto; /* prevents full-width stretching */
+  flex-shrink: 0; /* avoid stretching inside flex parent */
 }
 
-.main-btn .btn-text {
-  padding: 0 2rem;
+
+.main-btn .btn-text,
+.read-more-btn .btn-text,
+.repo-btn .btn-text,
+.contact-btn .btn-text,
+.ask-btn .btn-text {
+  padding: 0 0.8rem; /* smaller horizontal padding */
 }
 
-.main-btn .btn-icon {
+.main-btn .btn-icon,
+.read-more-btn .btn-icon,
+.repo-btn .btn-icon,
+.contact-btn .btn-icon,
+.ask-btn .btn-icon {
   background-color: var(--color-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  padding: 1rem;
+  padding: 0.45rem; /* smaller icon circle */
 }
 
-.main-btn::before {
+.main-btn::before,
+.read-more-btn::before,
+.repo-btn::before,
+.contact-btn::before,
+.ask-btn::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
   transform: translateX(100%);
   transition: all 0.4s ease-out;
   z-index: -1;
 }
 
-.main-btn:hover {
-  transition: all 0.4s ease-out;
+.main-btn:hover::before,
+.read-more-btn:hover::before,
+.repo-btn:hover::before,
+.contact-btn:hover::before,
+.ask-btn:hover::before {
+  transform: translateX(0);
 }
 
-.main-btn:hover::before {
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-secondary);
-  transform: translateX(0);
-  transition: all 0.4s ease-out;
+.main-btn:hover,
+.read-more-btn:hover,
+.repo-btn:hover,
+.contact-btn:hover,
+.ask-btn:hover {
+  color: var(--color-white);
 }
+
 
 .main-title {
   text-align: center;
@@ -1122,49 +1164,6 @@ section {
         border-color: #00ff99;
         outline: none;
     }
-.read-more-btn {
-  border-radius: 20px;
-  color: inherit;
-  font-weight: 600;
-  font-size: 0.9rem;
-  position: relative;
-  border: 1px solid var(--color-secondary);
-  display:-webkit-inline-flex;
-  align-items: center;
-  align-self: flex-start;
-  overflow: hidden;
-  height: 40px;
-  transition: all 0.3s ease-in-out;
-  background-color: transparent;
-  gap: 0.6rem;
-}
-
-.read-more-btn .btn-text {
-  padding:0 2rem;
-}
-
-.read-more-btn .btn-icon {
-  background-color: var(--color-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  padding: 0.8rem;
-  transition: transform 0.3s ease;
-}
-
-.read-more-btn .btn-icon i {
-  font-size: 0.8rem;
-  color: var(--color-white);
-}
-
-.read-more-btn:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
-}
-
-.read-more-btn:hover .btn-icon {
-  transform: translateX(3px);
-}
+ 
 
 /*# sourceMappingURL=styles.css.map */
