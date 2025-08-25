@@ -11,29 +11,66 @@
         document.body.classList.toggle("light-mode");
     })
 })();
-// Animate skills when scrolled into view
 document.addEventListener("DOMContentLoaded", () => {
-  const skills = document.querySelectorAll(".skill-card");
+  const progressBars = document.querySelectorAll(".progress-bar");
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        let percent = entry.target.getAttribute("data-percent");
-        let circle = entry.target.querySelector(".circle span");
-        let progress = 0;
+  progressBars.forEach(bar => {
+    let percentText = bar.querySelector(".prog-text").innerText; // e.g. "85%"
+    let percent = parseInt(percentText.replace("%", "")); // only number
+    let span = bar.querySelector(".progress span");
 
-        let interval = setInterval(() => {
-          if (progress >= percent) {
-            clearInterval(interval);
-          } else {
-            progress++;
-            circle.textContent = progress + "%";
-            entry.target.querySelector(".circle::before");
-          }
-        }, 15);
+    let width = 0;
+    let interval = setInterval(() => {
+      if (width >= percent) {
+        clearInterval(interval);
+      } else {
+        width++;
+        span.style.width = width + "%";
+        bar.querySelector(".prog-text").innerText = width + "%";
       }
-    });
-  }, { threshold: 0.5 });
-
-  skills.forEach(skill => observer.observe(skill));
+    }, 20); // speed of animation
+  });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const skillSections = document.querySelectorAll(".progress-bar");
+
+  const animateSkill = (skill) => {
+    const textEl = skill.querySelector(".prog-text");
+    const span = skill.querySelector(".progress span");
+
+    let finalValue = parseInt(textEl.textContent); // e.g. 90
+    let current = 0;
+
+    // reset first
+    textEl.textContent = "0%";
+    span.style.width = "0%";
+
+    let interval = setInterval(() => {
+      current++;
+      textEl.textContent = current + "%";
+      span.style.width = current + "%";
+
+      if (current >= finalValue) {
+        clearInterval(interval);
+      }
+    }, 20); // speed
+  };
+
+  // Intersection Observer (when visible in viewport)
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateSkill(entry.target);
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    },
+    { threshold: 0.1 } // half visible
+  );
+
+  skillSections.forEach((skill) => {
+    observer.observe(skill);
+  });
+});
+
