@@ -11,3 +11,29 @@
         document.body.classList.toggle("light-mode");
     })
 })();
+// Animate skills when scrolled into view
+document.addEventListener("DOMContentLoaded", () => {
+  const skills = document.querySelectorAll(".skill-card");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        let percent = entry.target.getAttribute("data-percent");
+        let circle = entry.target.querySelector(".circle span");
+        let progress = 0;
+
+        let interval = setInterval(() => {
+          if (progress >= percent) {
+            clearInterval(interval);
+          } else {
+            progress++;
+            circle.textContent = progress + "%";
+            entry.target.querySelector(".circle::before");
+          }
+        }, 15);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  skills.forEach(skill => observer.observe(skill));
+});

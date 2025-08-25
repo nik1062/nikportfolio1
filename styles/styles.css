@@ -43,6 +43,7 @@ body {
   transition: all 0.4s ease-in-out;
 }
 
+
 a {
   display: inline-block;
   text-decoration: none;
@@ -333,38 +334,86 @@ section {
   position: relative;
 }
 
+.about-stats .progress-bars .progress-bar .progress-con .progress {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background-color: var(--color-grey-4); /* Use a neutral background */
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
 .about-stats .progress-bars .progress-bar .progress-con .progress span {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  background-color: var(--color-secondary);
-  transition: all 0.4s ease-in-out;
-  width: 60%;
+  border-radius: 10px;
+  transition: width 1.5s ease-in-out;
+  background-color: var(--color-secondary); /* Add background color */
+  display: block;
 }
 
+/* Now your skills will be consistent */
 .about-stats .progress-bars .progress-bar .progress-con .progress .html {
-  width: 80%;
+  width: 90%;
+  background: linear-gradient(90deg, #f7971e, #ffd200);
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress .css {
-  width: 95%;
+  width: 85%;
+  background: linear-gradient(90deg, #56ccf2, #2f80ed);
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress .js {
-  width: 75%;
+  width: 80%;
+  background: linear-gradient(90deg, #f7971e, #ff416c);
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress .react {
-  width: 60%;
+  width: 70%;
+  background: linear-gradient(90deg, #61dafb, #21a1f1);
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress .node {
-  width: 87%;
+  width: 75%;
+  background: linear-gradient(90deg, #8d9459, #0f9d58);
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress .python {
-  width: 70%;
+  width: 85%;
+  background: linear-gradient(90deg, #306998, #d9e906);
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .data {
+  width: 90%;
+  background: linear-gradient(90deg, #2992b5, #0f289a);
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .ai {
+  width: 80%;
+  background: linear-gradient(90deg, #ff6a00, #3b51be);
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .Prompt {
+  width: 90%;
+  background: linear-gradient(90deg, #8e2de2, #4a00e0);
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .VS {
+  width: 90%;
+  background: linear-gradient(90deg, #0078d7, #00bcf2);
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .Git {
+  width: 90%;
+  background: linear-gradient(90deg, #f1502f, #f18e2f);
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .Agent {
+  width: 90%;
+  background: linear-gradient(90deg, #F1502F, #dc0909);
 }
 
 .stat-title {
@@ -1166,4 +1215,4 @@ section {
     }
  
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map  css have been changed for that buttons now no need to change */
