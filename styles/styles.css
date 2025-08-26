@@ -763,7 +763,7 @@ section {
 
 .contact-content-con .right-contact .submit-btn {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 /* Reset + base style for all button types */
@@ -791,7 +791,7 @@ section {
   border-radius: 30px;
   color: inherit;
   font-weight: 600;
-  font-size: 0.85rem;
+  
   position: relative;
   border: 1px solid var(--color-secondary);
   display: inline-flex; /* inline so it only takes needed space */
@@ -800,6 +800,7 @@ section {
   height: 36px;
   padding: 0;
   background: none;
+  justify-items: center;
   cursor: pointer;
   width: auto; /* prevents full-width stretching */
   flex-shrink: 0; /* avoid stretching inside flex parent */
@@ -842,6 +843,7 @@ section {
   transform: translateX(100%);
   transition: all 0.4s ease-out;
   z-index: -1;
+  justify-items: center;
 }
 
 .main-btn:hover::before,
