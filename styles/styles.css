@@ -1295,34 +1295,30 @@ section {
   50% { border-color: var(--color-secondary); }
 }
 
-/* Tech Marquee Fix */
+/* Tech Marquee Fix - High Compatibility */
 .tech-marquee {
     width: 100%;
     overflow: hidden;
-    padding: 3rem 0;
-    position: relative;
+    padding: 2.5rem 0;
     background: var(--color-grey-6);
     border-radius: 15px;
     margin: 2rem 0;
-    display: flex;
-    align-items: center;
+    position: relative;
 }
 
 .marquee-content {
     display: flex;
-    gap: 4rem; /* Constant gap between icons */
-    animation: scroll 20s linear infinite;
-    white-space: nowrap;
+    width: max-content; /* Ensure container expands to fit icons */
+    animation: scroll 25s linear infinite;
 }
 
 .marquee-content i {
-    font-size: 4rem !important; /* Large, clear icons */
+    font-size: 3.5rem !important; /* Fixed large size */
     color: var(--color-grey-2);
+    margin: 0 3rem; /* Robust manual spacing */
     transition: all 0.3s ease;
     cursor: pointer;
-    min-width: 100px;
-    display: flex;
-    justify-content: center;
+    flex-shrink: 0; /* Prevent icons from squeezing */
 }
 
 .marquee-content i:hover {
@@ -1331,8 +1327,8 @@ section {
 }
 
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Smooth infinite loop */
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Halfway point for seamless loop */
 }
 
 /* Portfolio & Skill Filters */
