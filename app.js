@@ -1,30 +1,16 @@
 (function () {
-    // Section Switching Logic
+    // 1. Persistent State Logic (Section & Theme)
     const controls = document.querySelectorAll(".control");
-    const sections = document.querySelectorAll(".container"); // Sections & Header have .container
+    const sections = document.querySelectorAll(".container");
 
     function transitions() {
-        // Button click active class
+        // Button click active class & Section Switching
         controls.forEach((btn) => {
             btn.addEventListener("click", function() {
-                // Remove active-btn from all controls
-                controls.forEach((c) => c.classList.remove("active-btn"));
-                this.classList.add("active-btn");
-
-                // Handle section switching specifically
                 const id = this.dataset.id;
-                if (id) {
-                    // Remove active from any element that has it in the main content area
-                    // We target only .container elements to avoid conflicting with filter buttons
-                    sections.forEach((section) => {
-                        section.classList.remove("active");
-                    });
-
-                    const targetSection = document.getElementById(id);
-                    if (targetSection) {
-                        targetSection.classList.add("active");
-                    }
-                }
+                activateSection(id);
+                // Save the current section ID to localStorage
+                localStorage.setItem('activeSection', id);
             });
         });
 
@@ -33,10 +19,46 @@
         if (themeBtn) {
             themeBtn.addEventListener("click", () => {
                 document.body.classList.toggle("light-mode");
+                // Save theme preference
+                const isLight = document.body.classList.contains("light-mode");
+                localStorage.setItem('theme', isLight ? 'light' : 'dark');
             });
         }
     }
 
+    // Helper to activate a specific section
+    function activateSection(id) {
+        if (!id) return;
+        
+        // Update Buttons
+        controls.forEach((c) => {
+            if(c.dataset.id === id) c.classList.add("active-btn");
+            else c.classList.remove("active-btn");
+        });
+
+        // Update Sections
+        sections.forEach((section) => {
+            if(section.id === id) section.classList.add("active");
+            else section.classList.remove("active");
+        });
+    }
+
+    // Initialize Persistent State on Load
+    function initPersistence() {
+        // Restore Theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add("light-mode");
+        }
+
+        // Restore Section (Prevent resetting to Home on reload)
+        const savedSection = localStorage.getItem('activeSection');
+        if (savedSection && savedSection !== 'home') {
+            activateSection(savedSection);
+        }
+    }
+
+    initPersistence();
     transitions();
 })();
 
