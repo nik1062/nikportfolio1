@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Nikunj Kumar | Full-Stack & DevOps Engineer</title>
+    <!-- SEO & Social Media Meta Tags -->
+    <meta name="description" content="Portfolio of Nikunj Kumar - Full-Stack Developer, Mobile App Developer, and DevOps Enthusiast. Winner of NEURA '25 AI Hackathon.">
+    <meta property="og:title" content="Nikunj Kumar | Full-Stack Engineer">
+    <meta property="og:description" content="Explore my projects in Web, Mobile, DevOps, and AI.">
+    <meta property="og:image" content="https://nik1062.github.io/nikportfolio1/img/hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +23,16 @@
 </head>
 
 <body class="main-content">
+    <!-- Branded Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-logo">NK</div>
+            <p style="color: var(--color-grey-2); margin-top: -10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">
+                Nikunj Kumar | Full-Stack & DevOps
+            </p>
+            <div class="loader-bar" style="margin-top: 20px;"></div>
+        </div>
+    </div>
     <div id="scroll-progress"></div>
     <header class="container header active" id="home">
         <div class="header-content">
@@ -738,8 +754,8 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form action="https://formsubmit.co/nikunjkumar1062@gmail.com" method="POST"
-                            class="contact-form">
+                        <form action="https://formsubmit.co/ajax/nikunjkumar1062@gmail.com" method="POST"
+                            class="contact-form" id="contact-form">
                             <div class="input-control i-c-2">
                                 <input type="text" name="name" required placeholder="YOUR NAME">
                                 <input type="email" name="email" required placeholder="YOUR EMAIL">
@@ -758,6 +774,14 @@
                                 </button>
                             </div>
                         </form>
+                        <div id="form-success" class="success-message">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Message Sent!</h3>
+                            <p>Thank you, Nikunj will get back to you soon.</p>
+                            <button class="main-btn" style="margin-top: 1rem;" onclick="location.reload()">
+                                <span class="btn-text">Send Another</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -788,6 +812,32 @@
     <div class="theme-btn">
         <i class="fas fa-adjust"></i>
     </div>
+
+    <!-- Project Quick View Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <img id="modal-img" src="" alt="">
+                </div>
+                <div class="modal-right">
+                    <h3 id="modal-title">Project Title</h3>
+                    <div class="modal-tags" id="modal-tags">
+                        <!-- Tags injected by JS -->
+                    </div>
+                    <p id="modal-desc">Project description goes here...</p>
+                    <div class="modal-actions">
+                        <a href="#" id="modal-github" class="main-btn" target="_blank">
+                            <span class="btn-text">View Code</span>
+                            <span class="btn-icon"><i class="fab fa-github"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
     <script>
 

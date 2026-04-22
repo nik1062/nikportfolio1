@@ -1085,6 +1085,90 @@ section {
     object-fit: cover !important;
 }
 
+/* Branded Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+#preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-logo {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+    letter-spacing: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loader-bar {
+    width: 150px;
+    height: 3px;
+    background: var(--color-grey-5);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--color-secondary);
+    animation: loaderMove 1.5s infinite ease-in-out;
+}
+
+@keyframes loaderMove {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.95); }
+}
+
+/* Success Message Styling */
+.success-message {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-grey-5);
+    border-radius: 15px;
+    border: 1px solid var(--color-secondary);
+}
+
+.success-message i {
+    font-size: 3rem;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+.success-message h3 {
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+
 /* Scroll Progress Bar */
 #scroll-progress {
   position: fixed;
@@ -1094,6 +1178,106 @@ section {
   height: 4px;
   background: var(--color-secondary);
   z-index: 9999;
+}
+
+/* Project Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 11000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: var(--color-grey-6);
+    margin: 5% auto;
+    padding: 2rem;
+    border: 1px solid var(--color-grey-5);
+    width: 80%;
+    max-width: 900px;
+    border-radius: 15px;
+    position: relative;
+    animation: modalAppear 0.4s ease-out;
+}
+
+@keyframes modalAppear {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: var(--color-white);
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--color-secondary);
+}
+
+.modal-body {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.modal-left {
+    flex: 1;
+}
+
+.modal-left img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.modal-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-right h3 {
+    font-size: 2rem;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-tag {
+    background: var(--color-grey-5);
+    color: var(--color-grey-2);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.modal-right p {
+    color: var(--color-grey-1);
+    line-height: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+    .modal-body { flex-direction: column; }
+    .modal-content { width: 90%; margin: 10% auto; }
 }
 
 /* Typing Effect CSS */

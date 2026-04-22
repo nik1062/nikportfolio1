@@ -9,7 +9,6 @@
             btn.addEventListener("click", function() {
                 const id = this.dataset.id;
                 activateSection(id);
-                // Save the current section ID to localStorage
                 localStorage.setItem('activeSection', id);
             });
         });
@@ -19,43 +18,30 @@
         if (themeBtn) {
             themeBtn.addEventListener("click", () => {
                 document.body.classList.toggle("light-mode");
-                // Save theme preference
                 const isLight = document.body.classList.contains("light-mode");
                 localStorage.setItem('theme', isLight ? 'light' : 'dark');
             });
         }
     }
 
-    // Helper to activate a specific section
     function activateSection(id) {
         if (!id) return;
-        
-        // Update Buttons
         controls.forEach((c) => {
             if(c.dataset.id === id) c.classList.add("active-btn");
             else c.classList.remove("active-btn");
         });
-
-        // Update Sections
         sections.forEach((section) => {
             if(section.id === id) section.classList.add("active");
             else section.classList.remove("active");
         });
     }
 
-    // Initialize Persistent State on Load
     function initPersistence() {
-        // Restore Theme
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            document.body.classList.add("light-mode");
-        }
+        if (savedTheme === 'light') document.body.classList.add("light-mode");
 
-        // Restore Section (Prevent resetting to Home on reload)
         const savedSection = localStorage.getItem('activeSection');
-        if (savedSection && savedSection !== 'home') {
-            activateSection(savedSection);
-        }
+        if (savedSection && savedSection !== 'home') activateSection(savedSection);
     }
 
     initPersistence();
@@ -64,6 +50,7 @@
 
 // Initialize everything on DOM Load
 document.addEventListener("DOMContentLoaded", () => {
+    
     // 1. Typing Effect
     const typedTextSpan = document.querySelector('.typing-text');
     if (typedTextSpan) {
@@ -99,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(type, typingDelay + 1100);
             }
         }
-        
         setTimeout(type, newTextDelay + 250);
     }
 
@@ -108,7 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
     filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
             document.querySelectorAll('.portfolio-filters .filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
@@ -132,7 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const skillBars = document.querySelectorAll('.progress-bar');
 
     skillFilterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
             document.querySelectorAll('.skill-filters .skill-filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
@@ -154,47 +142,128 @@ document.addEventListener("DOMContentLoaded", () => {
         const username = 'nik1062';
         const repoElement = document.getElementById('github-repos');
         if (!repoElement) return;
-
         try {
             const response = await fetch(`https://api.github.com/users/${username}`);
             if (response.ok) {
                 const data = await response.json();
                 repoElement.textContent = `${data.public_repos}+`;
             }
-        } catch (error) {
-            console.error('Error fetching GitHub stats:', error);
-        }
+        } catch (error) { console.error('GitHub fetch failed'); }
     })();
 
-    // 5. Skill Bar Animation on Scroll
-    const animateSkill = (skill) => {
-        const textEl = skill.querySelector(".prog-text");
-        const span = skill.querySelector(".progress span");
-        if (!textEl || !span) return;
-
-        let finalValue = parseInt(textEl.textContent) || 80;
-        let current = 0;
-        textEl.textContent = "0%";
-        span.style.width = "0%";
-
-        let interval = setInterval(() => {
-            current++;
-            textEl.textContent = current + "%";
-            span.style.width = current + "%";
-            if (current >= finalValue) clearInterval(interval);
-        }, 15);
-    };
-
+    // 5. Skill Bar Animation
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                animateSkill(entry.target);
-                observer.unobserve(entry.target);
+                const skill = entry.target;
+                const textEl = skill.querySelector(".prog-text");
+                const span = skill.querySelector(".progress span");
+                if (textEl && span) {
+                    let finalValue = parseInt(textEl.textContent) || 80;
+                    let current = 0;
+                    let interval = setInterval(() => {
+                        current++;
+                        textEl.textContent = current + "%";
+                        span.style.width = current + "%";
+                        if (current >= finalValue) clearInterval(interval);
+                    }, 15);
+                }
+                observer.unobserve(skill);
             }
         });
     }, { threshold: 0.1 });
-
     document.querySelectorAll(".progress-bar").forEach((skill) => observer.observe(skill));
+
+    // 6. AJAX Contact Form
+    const contactForm = document.getElementById('contact-form');
+    const successDiv = document.getElementById('form-success');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('button');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="btn-text">Sending...</span>';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    contactForm.style.display = 'none';
+                    successDiv.style.display = 'block';
+                } else { throw new Error(); }
+            } catch (error) {
+                alert('Submission failed. Please try again.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // 7. Project Quick View Modal
+    const modal = document.getElementById('project-modal');
+    if (modal) {
+        const closeModal = document.querySelector('.close-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImg = document.getElementById('modal-img');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalGithub = document.getElementById('modal-github');
+        const modalTags = document.getElementById('modal-tags');
+
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                if(e.target.closest('.icon')) return;
+                const title = item.querySelector('h3').textContent;
+                const img = item.querySelector('img').src;
+                const desc = item.querySelector('.hover-items p').textContent;
+                const github = item.querySelector('.icons a').href;
+                
+                modalTitle.textContent = title;
+                modalImg.src = img;
+                modalDesc.textContent = desc;
+                modalGithub.href = github;
+                modalTags.innerHTML = '';
+                const tags = desc.split('-')[1]?.split('&') || desc.split(',');
+                tags.forEach(tag => {
+                    const span = document.createElement('span');
+                    span.className = 'modal-tag';
+                    span.textContent = tag.trim();
+                    modalTags.appendChild(span);
+                });
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        if (closeModal) {
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+        window.addEventListener('click', (e) => {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    // 8. Preloader (Set to stay for 5 seconds)
+    const hidePreloader = () => {
+        const preloader = document.getElementById('preloader');
+        if (preloader && !preloader.classList.contains('loaded')) {
+            // Force a 5-second delay for the premium feel
+            setTimeout(() => {
+                preloader.classList.add('loaded');
+                setTimeout(() => { preloader.style.display = 'none'; }, 600);
+            }, 5000); 
+        }
+    };
+    window.addEventListener('load', hidePreloader);
 });
 
 // Scroll Progress Bar
