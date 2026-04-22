@@ -1295,16 +1295,7 @@ section {
   50% { border-color: var(--color-secondary); }
 }
 
-/* Tech Marquee Fix - High Compatibility */
-.tech-marquee {
-    width: 100%;
-    overflow: hidden;
-    padding: 2.5rem 0;
-    background: var(--color-grey-6);
-    border-radius: 15px;
-    margin: 2rem 0;
-    position: relative;
-}
+
 
 .marquee-content {
     display: flex;
@@ -1797,4 +1788,41 @@ section {
 
 .portfolios .portfolio-item .hover-items .icons .icon:hover i {
   color: var(--color-primary);
+}
+
+
+/* Definitive Tech Marquee - Transparent & Fluid */
+.tech-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+    background: transparent !important; /* No background */
+    margin: 1rem 0;
+    position: relative;
+    display: flex;
+}
+
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    animation: scrollMarquee 30s linear infinite;
+    gap: 5rem; /* Large, consistent spacing */
+}
+
+.marquee-content i {
+    font-size: 4rem !important; /* Large icons */
+    color: var(--color-grey-2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.marquee-content i:hover {
+    color: var(--color-secondary);
+    transform: scale(1.2);
+}
+
+@keyframes scrollMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
