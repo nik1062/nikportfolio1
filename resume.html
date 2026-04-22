@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikunj Kumar - Comprehensive Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #191d2b;
+            --color-secondary: #27AE60;
+            --color-white: #FFFFFF;
+            --color-black: #000;
+            --color-grey0: #f8f8f8;
+            --color-grey-1: #dbe1e8;
+            --color-grey-2: #b2becd;
+            --color-grey-3: #6c7983;
+            --color-grey-4: #454e56;
+            --color-grey-5: #2a2e35;
+            --color-grey-6: #12181b;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--color-grey-6);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        header {
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        h1 { font-size: 3rem; margin: 0; color: var(--color-secondary); }
+        .contact-info { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px; color: var(--color-grey-2); }
+        h2 { border-left: 5px solid var(--color-secondary); padding-left: 15px; margin-top: 40px; color: var(--color-white); text-transform: uppercase; }
+        .section-content { margin-left: 20px; }
+        .job-item, .project-item { margin-bottom: 25px; }
+        .item-header { display: flex; justify-content: space-between; font-weight: bold; color: var(--color-secondary); }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .skill-cat h3 { color: var(--color-secondary); font-size: 1.1rem; }
+        ul { padding-left: 20px; }
+        .no-print { text-align: center; margin-bottom: 20px; }
+        .btn {
+            background-color: var(--color-secondary);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        @media print {
+            .no-print { display: none; }
+            body { padding: 0; background-color: white; color: black; }
+            .resume-container { box-shadow: none; width: 100%; max-width: 100%; border-radius: 0; padding: 20px; }
+            h1, h2, .item-header, .skill-cat h3 { color: #27AE60 !important; }
+            .contact-info { color: #555 !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print">
+        <button class="btn" onclick="window.print()">Print to PDF / Save as PDF</button>
+        <a href="index.html" class="btn" style="background: #454e56; margin-left: 10px;">Back to Portfolio</a>
+    </div>
+
+    <div class="resume-container">
+        <header>
+            <h1>NIKUNJ KUMAR</h1>
+            <p style="font-size: 1.2rem; margin-top: 5px;">Full-Stack Developer | Mobile App Developer | DevOps Engineer</p>
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> nikunjkumar1062@gmail.com</span>
+                <span><i class="fas fa-phone"></i> +91 9334298148</span>
+                <span><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</span>
+                <span><i class="fab fa-github"></i> nik1062</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Technical Summary</h2>
+            <div class="section-content">
+                <p>Versatile and results-driven IT undergraduate with practical experience across the entire development lifecycle. Expertise in <b>Mobile App Development (Flutter/Dart)</b>, <b>Full-Stack Web Development (MERN, Python)</b>, and <b>DevOps (Docker, AWS, CI/CD)</b>. Proven ability to architect scalable solutions, win national hackathons (NEURA '25), and lead cross-functional teams.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <div class="section-content">
+                <div class="skills-grid">
+                    <div class="skill-cat">
+                        <h3>Mobile & Web</h3>
+                        <p>Flutter, Android, Dart, React.js, Node.js, Express.js, Svelte, HTML5, CSS3, JavaScript</p>
+                    </div>
+                    <div class="skill-cat">
+                        <h3>DevOps & Cloud</h3>
+                        <p>Docker, AWS (EC2, S3), CI/CD (GitHub Actions), NGINX, Linux System Admin, Git, Bash</p>
+                    </div>
+                    <div class="skill-cat">
+                        <h3>AI & Programming</h3>
+                        <p>Python, Machine Learning, Azure AI, OpenAI API, Prompt Engineering, SQL, MongoDB</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="section-content">
+                <div class="job-item">
+                    <div class="item-header">
+                        <span>Anna University, Chennai</span>
+                        <span>2023 - 2027</span>
+                    </div>
+                    <p><b>B.Tech in Information Technology</b> | CGPA: 8.5/10</p>
+                    <p>Relevant Coursework: Operating Systems, Computer Networks, Cloud Computing, DBMS, Software Engineering</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Major Achievements</h2>
+            <div class="section-content">
+                <div class="project-item">
+                    <div class="item-header">
+                        <span>First Prize - NEURA '25 AI Hackathon</span>
+                        <span>2025</span>
+                    </div>
+                    <p>Led a team to build and deploy a production-ready AI solution within 24 hours. Managed architecture, deployment, and integration.</p>
+                </div>
+                <div class="project-item">
+                    <div class="item-header">
+                        <span>Team Leader - IBM NM Hackathon</span>
+                        <span>2024</span>
+                    </div>
+                    <p>Architected backend services and managed end-to-end deployment pipelines for a high-traffic hackathon solution.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Top Projects</h2>
+            <div class="section-content">
+                <div class="project-item">
+                    <div class="item-header">
+                        <span>EduHub - Online Education Platform</span>
+                        <span>Full-Stack | Mobile</span>
+                    </div>
+                    <p>A comprehensive learning platform featuring structured courses, real-time student interaction, and a responsive Flutter-based mobile experience. Built with Node.js and MongoDB.</p>
+                </div>
+                <div class="project-item">
+                    <div class="item-header">
+                        <span>Containerized Food Delivery Pipeline</span>
+                        <span>DevOps | AWS</span>
+                    </div>
+                    <p>Authored multi-stage Dockerfiles and CI/CD pipelines reducing deployment effort by 70%. Provisioned auto-scaling EC2 instances and NGINX load balancers.</p>
+                </div>
+                <div class="project-item">
+                    <div class="item-header">
+                        <span>ML Threat Detection System</span>
+                        <span>AI | Python</span>
+                    </div>
+                    <p>Developed an ML-based security system for anomaly and threat detection in network traffic. Integrated with Azure AI for real-time analysis.</p>
+                </div>
+                <div class="project-item">
+                    <div class="item-header">
+                        <span>SABASH - Bus Management System</span>
+                        <span>Mobile | Firebase</span>
+                    </div>
+                    <p>Real-time bus tracking system with admin dashboards and user-facing mobile apps for efficient public transport management.</p>
+                </div>
+                <div class="project-item">
+                    <div class="item-header">
+                        <span>FridgeFriend - Grocery Manager</span>
+                        <span>Flutter | Riverpod</span>
+                    </div>
+                    <p>Mobile application to reduce food wastage via expiry tracking, smart reminders, and inventory management using state-of-the-art Flutter patterns.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -17,6 +17,7 @@
 </head>
 
 <body class="main-content">
+    <div id="scroll-progress"></div>
     <header class="container header active" id="home">
         <div class="header-content">
             <div class="left-header">
@@ -31,14 +32,15 @@
 
                 </h1>
                 <p>
-                    I'm a Web Developer, I love to create beautiful and functional websites.
+                    I'm a <span class="typing-text"></span>
                 </p>
-                <P>
-                    I am passionate about coding and enjoy building projects that solve real-world problems.
-                </P>
+                <p>
+                    I love to create beautiful and functional websites, passionate about coding and building projects
+                    that solve real-world problems.
+                </p>
                 <div class="btn-con">
                     <div class="btn-con">
-                        <a href="NIKUNJ-KUMAR CV.pdf" class="main-btn">
+                        <a href="resume.html" class="main-btn">
                             <span class="btn-text">Download CV</span>
                             <span class="btn-icon"><i class="fas fa-download"></i></span>
                         </a>
@@ -63,7 +65,7 @@
                         AI/ML applications using tools like ChatGPT.
                     </p>
                     <div class="btn-con">
-                        <a href="NIKUNJ-KUMAR CV.pdf" class="main-btn">
+                        <a href="resume.html" class="main-btn">
                             <span class="btn-text">Download CV</span>
                             <span class="btn-icon"><i class="fas fa-download"></i></span>
                         </a>
@@ -72,8 +74,8 @@
                 <div class="right-about">
                     <div class="about-item">
                         <div class="abt-text">
-                            <p class="large-text">10+</p>
-                            <p class="small-text">Projects <br /> Completed</p>
+                            <p class="large-text" id="github-repos">10+</p>
+                            <p class="small-text">GitHub <br /> Repositories</p>
                             <ul style="font-size: 17px; margin-top: 5px; padding-left: 20px; list-style-type: disc;">
                                 <li>Portfolio Website</li>
                                 <li>Jarvis AI Assistant</li>
@@ -100,7 +102,6 @@
                                 <li>AI, ML & Data</li>
                                 <li>Tools & Platforms</li>
                             </ul>
-
                         </div>
                     </div>
                     <div class="about-item">
@@ -112,15 +113,74 @@
                                 <li>Full Stack Web Development </li>
                                 <li>Python Programming </li>
                                 <li>Data Analytics</li>
-
                         </div>
                     </div>
                 </div>
             </div>
             <div class="about-stats">
                 <h4 class="stat-title">My Skills</h4>
+                <div class="skill-filters portfolio-filters" style="margin-top: 2rem;">
+                    <button class="filter-btn skill-filter-btn active" data-skill="all">All Skills</button>
+                    <button class="filter-btn skill-filter-btn" data-skill="web">Web & Backend</button>
+                    <button class="filter-btn skill-filter-btn" data-skill="mobile">Mobile</button>
+                    <button class="filter-btn skill-filter-btn" data-skill="devops">DevOps & Cloud</button>
+                    <button class="filter-btn skill-filter-btn" data-skill="ai">AI & Data</button>
+                </div>
+
                 <div class="progress-bars">
-                    <div class="progress-bar">
+
+                    <div class="progress-bar devops">
+                        <p class="prog-title">Docker & Containers</p>
+                        <div class="progress-con">
+                            <p class="prog-text">80%</p>
+                            <div class="progress">
+                                <span class="docker"
+                                    style="width: 80%; background-color: #2496ed; height: 100%; display: block; border-radius: 10px; transition: all 0.4s ease;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar devops">
+                        <p class="prog-title">AWS (EC2, S3)</p>
+                        <div class="progress-con">
+                            <p class="prog-text">75%</p>
+                            <div class="progress">
+                                <span class="aws"
+                                    style="width: 75%; background-color: #ff9900; height: 100%; display: block; border-radius: 10px; transition: all 0.4s ease;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar mobile">
+                        <p class="prog-title">Flutter & Dart</p>
+                        <div class="progress-con">
+                            <p class="prog-text">85%</p>
+                            <div class="progress">
+                                <span class="flutter"
+                                    style="width: 85%; background-color: #02569b; height: 100%; display: block; border-radius: 10px; transition: all 0.4s ease;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar devops">
+                        <p class="prog-title">CI/CD (GitHub Actions)</p>
+                        <div class="progress-con">
+                            <p class="prog-text">80%</p>
+                            <div class="progress">
+                                <span class="cicd"
+                                    style="width: 80%; background-color: #2088ff; height: 100%; display: block; border-radius: 10px; transition: all 0.4s ease;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar web">
+                        <p class="prog-title">MongoDB & SQL</p>
+                        <div class="progress-con">
+                            <p class="prog-text">85%</p>
+                            <div class="progress">
+                                <span class="db"
+                                    style="width: 85%; background-color: #47a248; height: 100%; display: block; border-radius: 10px; transition: all 0.4s ease;"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-bar web">
                         <p class="prog-title">html5</p>
                         <div class="progress-con">
                             <p class="prog-text">90%</p>
@@ -129,7 +189,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar web">
                         <p class="prog-title">css3</p>
                         <div class="progress-con">
                             <p class="prog-text">85%</p>
@@ -138,7 +198,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar web">
                         <p class="prog-title">javascript</p>
                         <div class="progress-con">
                             <p class="prog-text">80%</p>
@@ -147,7 +207,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar web">
                         <p class="prog-title">ReactJS</p>
                         <div class="progress-con">
                             <p class="prog-text">70%</p>
@@ -156,7 +216,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar web">
                         <p class="prog-title">NodeJS</p>
                         <div class="progress-con">
                             <p class="prog-text">75%</p>
@@ -165,7 +225,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar ai web">
                         <p class="prog-title">Python</p>
                         <div class="progress-con">
                             <p class="prog-text">85%</p>
@@ -174,7 +234,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar ai">
                         <p class="prog-title">Data Analysis</p>
                         <div class="progress-con">
                             <p class="prog-text">90%</p>
@@ -183,7 +243,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar ai">
                         <p class="prog-title">AI/ML</p>
                         <div class="progress-con">
                             <p class="prog-text">80%</p>
@@ -192,7 +252,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar ai">
                         <p class="prog-title">Prompt Engineering</p>
                         <div class="progress-con">
                             <p class="prog-text">90%</p>
@@ -201,7 +261,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar all">
                         <p class="prog-title">VS CODE</p>
                         <div class="progress-con">
                             <p class="prog-text">90%</p>
@@ -210,7 +270,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar all">
                         <p class="prog-title">Git & Github</p>
                         <div class="progress-con">
                             <p class="prog-text">90%</p>
@@ -219,7 +279,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar ai">
                         <p class="prog-title">Ai Agent Builder (N8N)</p>
                         <div class="progress-con">
                             <p class="prog-text">90%</p>
@@ -232,7 +292,49 @@
             </div>
 
             <h4 class="stat-title">My Timeline</h4>
+            
             <div class="timeline">
+                <div class="timeline-item">
+                    <div class="tl-icon">
+                        <i class="fas fa-trophy" style="color: #ff9900;"></i>
+                    </div>
+                    <p class="tl-duration">2025</p>
+                    <h5>First Prize - NEURA '25 AI Hackathon<span> - Innovation Lead</span></h5>
+                    <p>
+                        Led a team of developers to build and deploy a production-ready AI solution within 24 hours. Managed architecture and cross-functional integration.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-icon">
+                        <i class="fas fa-rocket" style="color: #27AE60;"></i>
+                    </div>
+                    <p class="tl-duration">2025</p>
+                    <h5>Major Project: EduHub Platform<span> - Full-Stack & Mobile</span></h5>
+                    <p>
+                        Architected a comprehensive online education system. Integrated Node.js backend with a Flutter mobile app, supporting real-time learning for remote students.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-icon">
+                        <i class="fas fa-server" style="color: #2496ed;"></i>
+                    </div>
+                    <p class="tl-duration">2024</p>
+                    <h5>DevOps Milestone: Food Delivery CI/CD<span> - AWS & Docker</span></h5>
+                    <p>
+                        Implemented a zero-downtime deployment pipeline. Optimized Docker images by 40% and automated multi-environment provisioning using GitHub Actions.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-icon">
+                        <i class="fas fa-users" style="color: #2496ed;"></i>
+                    </div>
+                    <p class="tl-duration">2024</p>
+                    <h5>Team Leader - IBM NM Hackathon<span> - Architecture Design</span></h5>
+                    <p>
+                        Managed end-to-end deployment for a high-traffic project. Focused on scalability and security using NGINX and custom UFW rules.
+                    </p>
+                </div>
+
                 <div class="timeline-item">
                     <div class="tl-icon">
                         <i class="fas fa-briefcase"></i>
@@ -297,253 +399,118 @@
             <div class="main-title">
 
                 <h2>My <span>Portfolio</span><span class="bg-text">My Work</span></h2>
-                <button type="submit" class="main-btn"
-                    href="https://github.com/nik1062/-Linear-Regression-Health-Costs-Calculator.git">
-                    <span class="btn-text">repositories</span>
+                <a href="https://github.com/nik1062?tab=repositories" class="main-btn" target="_blank">
+                    <span class="btn-text">View Repositories</span>
                     <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-                </button>
+                </a>
             </div>
-
-            </div>
-
             <p class="port-text">
                 Here is some of my work that I've done in various programming languages.
             </p>
+
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web & Backend</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="devops">DevOps</button>
+                <button class="filter-btn" data-filter="ai">AI/ML</button>
+            </div>
+
+            
+            
             <div class="portfolios">
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/hotelbook.png" alt="">
-                    </div>
+                <!-- Mobile Projects -->
+                <div class="portfolio-item mobile">
+                    <div class="image"><img src="img/fridge.png" alt="FridgeFriend"></div>
                     <div class="hover-items">
-                        <h3>Table Booking</h3>
-                        <div class="icons">
-                            <a href="https://nik1062.github.io/Fastfood-website/" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+                        <h3>FridgeFriend</h3>
+                        <p style="color:white; font-size: 0.8rem; text-align: center; padding: 0 10px;">Grocery Management - Flutter & Riverpod</p>
+                        <div class="icons"><a href="https://github.com/nik1062/FridgeFriend" class="icon" target="_blank"><i class="fab fa-github"></i></a></div>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img\fastfood.png" alt="">
-                    </div>
+                <div class="portfolio-item mobile">
+                    <div class="image"><img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=800" alt="FocusFlow"></div>
                     <div class="hover-items">
-                        <h3>Fastfood</h3>
-                        <div class="icons">
-                            <a href="https://github.com/nik1062/funfastfood.git" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+                        <h3>FocusFlow</h3>
+                        <p style="color:white; font-size: 0.8rem; text-align: center; padding: 0 10px;">Study Productivity - Flutter & SQLite</p>
+                        <div class="icons"><a href="https://github.com/nik1062/FocusFlow" class="icon" target="_blank"><i class="fab fa-github"></i></a></div>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/jarvis2.png" alt="">
-                    </div>
+                <div class="portfolio-item mobile">
+                    <div class="image"><img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800" alt="SABASH Bus System"></div>
                     <div class="hover-items">
-                        <h3>Jarvis-AI-Assistant</h3>
-                        <div class="icons">
-                            <a href="https://github.com/nik1062/Jarvis-AI-Assistant" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+                        <h3>SABASH Bus System</h3>
+                        <p style="color:white; font-size: 0.8rem; text-align: center; padding: 0 10px;">Real-time Tracking - Flutter & Firebase</p>
+                        <div class="icons"><a href="https://github.com/nik1062/SABASH" class="icon" target="_blank"><i class="fab fa-github"></i></a></div>
+                    </div>
+                </div>
+                <div class="portfolio-item mobile ai">
+                    <div class="image"><img src="img/agent.png" alt="AI Mobile Assistant"></div>
+                    <div class="hover-items">
+                        <h3>AI Mobile Assistant</h3>
+                        <p style="color:white; font-size: 0.8rem; text-align: center; padding: 0 10px;">Voice AI - Flutter & OpenAI</p>
+                        <div class="icons"><a href="https://github.com/nik1062/AI-Mobile-Assistant" class="icon" target="_blank"><i class="fab fa-github"></i></a></div>
                     </div>
                 </div>
 
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/sales1.png" alt="Sales Dashboard">
-                    </div>
+                <!-- Web & Backend -->
+                <div class="portfolio-item web mobile">
+                    <div class="image"><img src="img/eduhub.jpg" alt="EduHub"></div>
                     <div class="hover-items">
-                        <h3>Sales Dashboard - Power BI</h3>
-                        <div class="icons">
-                            <a href="https://github.com/nik1062/Sales-Dashboard-PowerBI" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+                        <h3>EduHub Platform</h3>
+                        <p style="color:white; font-size: 0.8rem; text-align: center; padding: 0 10px;">LMS - Node.js & Flutter</p>
+                        <div class="icons"><a href="https://github.com/nik1062/EduHub" class="icon" target="_blank"><i class="fab fa-github"></i></a></div>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/sales2.jpg" alt="Health Cost Prediction">
-                    </div>
+                <div class="portfolio-item devops web">
+                    <div class="image"><img src="img/cicd.png" alt="Food Delivery"></div>
                     <div class="hover-items">
-                        <h3>Health Cost Prediction - Python ML</h3>
-                        <div class="icons">
-                            <a href="https://github.com/nik1062/-Linear-Regression-Health-Costs-Calculator.git"
-                                class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+                        <h3>Food Delivery CI/CD</h3>
+                        <p style="color:white; font-size: 0.8rem; text-align: center; padding: 0 10px;">DevOps - Docker & AWS</p>
+                        <div class="icons"><a href="https://github.com/nik1062" class="icon" target="_blank"><i class="fab fa-github"></i></a></div>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img\sales3.png" alt="SQL Exploration">
-                    </div>
+                <div class="portfolio-item web">
+                    <div class="image"><img src="img/server.png" alt="MellonPass"></div>
                     <div class="hover-items">
-                        <h3>Data Exploration Using SQL</h3>
-                        <div class="icons">
-                            <a href="https://github.com/nik1062/SQL-Exploration" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+                        <h3>MellonPass Web</h3>
+                        <p style="color:white; font-size: 0.8rem; text-align: center; padding: 0 10px;">Svelte & TypeScript</p>
+                        <div class="icons"><a href="https://github.com/nik1062/mellonpass" class="icon" target="_blank"><i class="fab fa-github"></i></a></div>
                     </div>
                 </div>
-            </div>
-            <div class="portfolios">
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/lang.png" alt="">
-                    </div>
+                <div class="portfolio-item web">
+                    <div class="image"><img src="img/fastfood.png" alt="Fastfood"></div>
                     <div class="hover-items">
-                        <h3>Lang-translator</h3>
-                        <div class="icons">
-                            <a href="https://github.com/nik1062/lang-translator.git" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+                        <h3>Fastfood App</h3>
+                        <div class="icons"><a href="https://github.com/nik1062/Fastfood-website" class="icon" target="_blank"><i class="fab fa-github"></i></a></div>
                     </div>
                 </div>
 
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/jarvis.jpg" alt="">
-                    </div>
+                <!-- AI / ML -->
+                <div class="portfolio-item ai">
+                    <div class="image"><img src="img/jarvis.png" alt="Jarvis AI"></div>
                     <div class="hover-items">
-                        <h3>NOVA-Python</h3>
-                        <div class="icons">
-                            <a href="https://github.com/nik1062/NOVA-Python.git" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+                        <h3>Jarvis AI</h3>
+                        <p style="color:white; font-size: 0.8rem; text-align: center; padding: 0 10px;">Voice Assistant - Python & OpenAI</p>
+                        <div class="icons"><a href="https://github.com/nik1062/Jarvis-AI-Assistant" class="icon" target="_blank"><i class="fab fa-github"></i></a></div>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/dictnory.png" alt="">
-                    </div>
+                <div class="portfolio-item ai">
+                    <div class="image"><img src="img/sales1.png" alt="Sales Dashboard"></div>
                     <div class="hover-items">
-                        <h3>Dictionary</h3>
-                        <div class="icons">
-                            <a href="https://github.com/nik1062/Dictionary.git" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+                        <h3>Sales Dashboard</h3>
+                        <div class="icons"><a href="https://github.com/nik1062/Sales-Dashboard-PowerBI" class="icon" target="_blank"><i class="fab fa-github"></i></a></div>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/agent.png" alt="">
-                    </div>
+                <div class="portfolio-item ai">
+                    <div class="image"><img src="img/sales2.jpg" alt="Health Prediction"></div>
                     <div class="hover-items">
-                        <h3>Email Agent</h3>
-                        <div class="icons">
-                            <a href="https://github.com/nik1062/n8n-agents.git" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/Rock.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Rock-Paper-Scissors</h3>
-                        <div class="icons">
-                            <a href="https://github.com/nik1062/Rock-Paper-Scissors.git" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/currancy.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>currency-convertor</h3>
-                        <div class="icons">
-                            <a href="https://github.com/nik1062/currency-convertor.git" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+                        <h3>Health Cost Prediction</h3>
+                        <div class="icons"><a href="https://github.com/nik1062/-Linear-Regression-Health-Costs-Calculator.git" class="icon" target="_blank"><i class="fab fa-github"></i></a></div>
                     </div>
                 </div>
             </div>
+
         </section>
         <section class="container fade-up" id="blogs">
             <div class="blogs-content">
@@ -551,6 +518,34 @@
                     <h2>My <span>Blogs</span><span class="bg-text">My Blogs</span></h2>
                 </div>
                 <div class="blogs">
+
+                    <div class="blog">
+                        <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&q=80&w=800" alt="">
+                        <div class="blog-text">
+                            <h4>Mastering Docker for Real-world Apps</h4>
+                            <p>
+                                Why containerization is the secret weapon for modern developers and how I reduced my app's build time significantly.
+                            </p>
+                            <a href="#" class="main-btn read-more-btn">
+                                <span class="btn-text">Read More</span>
+                                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800" alt="">
+                        <div class="blog-text">
+                            <h4>The Flutter Advantage in 2025</h4>
+                            <p>
+                                My journey building SABASH and FridgeFriend using Flutter, and why cross-platform development is the future of mobile.
+                            </p>
+                            <a href="#" class="main-btn read-more-btn">
+                                <span class="btn-text">Read More</span>
+                                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+
                     <div class="blog">
                         <img src="img/port6.jpg" alt="">
                         <div class="blog-text">
@@ -560,8 +555,7 @@
                                 JavaScript.
                                 From layout to animations, here’s how it all came together.
                             </p>
-                            <a href="blog1.html" class="main-btn">
-                                <span class="btn-text">Read More</span>
+                            <a href="blog1.html" class="main-btn read-more-btn"><span class="btn-text">Read More</span>
                                 <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
                             </a>
 
@@ -577,8 +571,7 @@
                                 —
                                 and the lessons learned along the way.
                             </p>
-                            <a href="blog2.html" class="main-btn">
-                                <span class="btn-text">Read More</span>
+                            <a href="blog2.html" class="main-btn read-more-btn"><span class="btn-text">Read More</span>
                                 <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
                             </a>
                         </div>
@@ -592,8 +585,7 @@
                                 From ignoring mobile responsiveness to forgetting version control, here are some lessons
                                 I learned the hard way (so you don’t have to).
                             </p>
-                            <a href="blog3.html" class="main-btn">
-                                <span class="btn-text">Read More</span>
+                            <a href="blog3.html" class="main-btn read-more-btn"><span class="btn-text">Read More</span>
                                 <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
                             </a>
                         </div>
@@ -607,8 +599,7 @@
                                 Sharing how I hosted my portfolio site and other web projects using platforms like
                                 Vercel and Netlify, step by step.
                             </p>
-                            <a href="blog4.html" class="main-btn">
-                                <span class="btn-text">Read More</span>
+                           <a href="blog4.html" class="main-btn read-more-btn"><span class="btn-text">Read More</span>
                                 <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
                             </a>
                         </div>
@@ -622,8 +613,7 @@
                                 I explored Pandas, NumPy, and Matplotlib to clean, visualize, and draw insights from
                                 real-world datasets during my data analytics practice.
                             </p>
-                            <a href="blog5.html" class="main-btn">
-                                <span class="btn-text">Read More</span>
+                            <a href="blog5.html" class="main-btn read-more-btn"><span class="btn-text">Read More</span>
                                 <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
                             </a>
                         </div>
@@ -637,8 +627,7 @@
                                 A glimpse into how I moved from frontend basics to backend tools like Node.js, Express,
                                 and MongoDB while building real-world projects.
                             </p>
-                            <a href="blog6.html" class="main-btn">
-                                <span class="btn-text">Read More</span>
+                            <a href="blog6.html" class="main-btn read-more-btn"><span class="btn-text">Read More</span>
                                 <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
                             </a>
                         </div>
@@ -805,7 +794,7 @@
 
         (function () {
             if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-                window.chatbase = (...arguments) => {
+                window.chatbase = (...arguements) => {
                     if (!window.chatbase.q) {
                         window.chatbase.q = []
                     }

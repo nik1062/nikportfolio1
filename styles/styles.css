@@ -64,7 +64,7 @@ section {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 3rem 18rem;
+  padding: 3rem 5%; /* Changed from 18rem to 5% for fluid width */
 }
 
 .container {
@@ -290,6 +290,7 @@ section {
   line-height: 2rem;
   padding: 1rem;
   color: var(--color-grey-1);
+  font-size: 1.1rem; /* Unified with other sections */
 }
 
 .about-container .left-about h4 {
@@ -492,46 +493,51 @@ section {
 }
 
 
-.portfolios {
+@media screen and (min-width: 1251px) {
+  .portfolios {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.8rem;
+  margin-top: 2rem;
 }
 
 .portfolios .portfolio-item {
   position: relative;
-  border-radius: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .portfolios .portfolio-item img {
   width: 100%;
-  height: 300px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .portfolios .portfolio-item .hover-items {
   width: 100%;
   height: 100%;
-  background-color:#27AE60;
+  background-color: var(--color-secondary);
   position: absolute;
   left: 0;
   top: 0;
-  border-radius: 15px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   opacity: 0;
   transform: scale(0);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  padding: 1rem;
 }
 
 .portfolios .portfolio-item .hover-items h3 {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: var(--color-white);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
 }
 
 .portfolios .portfolio-item .hover-items .icons {
@@ -599,37 +605,54 @@ section {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
 }
 
+/* Blog Section Standardized */
+.blogs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.blogs .blog {
+  background-color: var(--color-grey-5);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.4s ease;
+}
+
 .blogs .blog img {
   width: 100%;
-  height: 300px;
+  height: 200px; /* Reduced from 300px */
   object-fit: cover;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  filter: grayscale(100%);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease;
 }
 
 .blogs .blog .blog-text {
-  margin-top: -7px;
-  padding: 1.1rem;
-  border-top: 8px solid var(--color-secondary);
+  padding: 1.2rem; /* Compact padding */
+  border-top: 5px solid var(--color-secondary);
 }
 
 .blogs .blog .blog-text h4 {
-  font-size: 1.5rem;
-  margin-bottom: 0.7rem;
-  transition: all 0.4s ease-in-out;
-  cursor: pointer;
-}
-
-.blogs .blog .blog-text h4:hover {
-  color: var(--color-secondary);
+  font-size: 1.2rem; /* Smaller heading */
+  margin-bottom: 0.5rem;
 }
 
 .blogs .blog .blog-text p {
+  font-size: 1rem; /* Unified small font */
+  line-height: 1.6rem;
   color: var(--color-grey-2);
-  line-height: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.blogs .blog .read-more-btn {
+    height: 40px !important; /* Smaller button */
+    margin-top: 0.5rem;
+}
+
+.blogs .blog .read-more-btn .btn-text {
+    padding: 0 1rem !important;
+    font-size: 0.85rem;
 }
 
 .contact-content-con {
@@ -894,6 +917,278 @@ section {
   padding-left: 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ask-me-anything {
+        margin-top: 60px;
+    }
+
+    .ask-container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .ask-form .input-control {
+        margin-bottom: 15px;
+    }
+
+    .ask-form input,
+    .ask-form textarea {
+        width: 100%;
+        padding: 12px;
+        background-color: #1e1e1e;
+        color: white;
+        border: 1px solid #3e3e3e;
+        border-radius: 8px;
+        font-size: 1rem;
+        resize: none;
+    }
+
+    .ask-form input:focus,
+    .ask-form textarea:focus {
+        border-color: #00ff99;
+        outline: none;
+    }
+ 
+
+/* Section Spacing Fix - Compact */
+section {
+    padding: 3rem 0; /* Reduced from 6rem */
+}
+
+#blogs {
+    margin-bottom: 5rem; /* Increased buffer */
+}
+
+#contact {
+    padding-top: 5rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-grey-5); /* subtle separator */
+}
+
+/* Fix Portfolio Header Button Alignment */
+.main-title .main-btn {
+    margin-top: 1rem;
+    display: inline-flex;
+}
+
+.portfolios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.portfolios .portfolio-item img {
+  width: 100% !important;
+  height: 150px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 8px;
+  display: block;
+}
+
+.main-title h2 {
+  font-size: 3rem; /* Reduced from 4rem */
+}
+
+.main-title h2 .bg-text {
+  font-size: 3.5rem; /* Reduced from 5.5rem */
+}
+
+.container {
+    padding: 3rem 8rem; /* Use flexible padding without !important */
+}
+.read-more-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px !important;
+    width: auto !important;
+    border: 1px solid var(--color-secondary) !important;
+    border-radius: 30px !important;
+    background: transparent !important;
+    cursor: pointer !important;
+    overflow: hidden !important;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.read-more-btn .btn-text {
+    padding: 0 1.5rem !important;
+    font-weight: 600;
+}
+
+.read-more-btn .btn-icon {
+    background-color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    color: var(--color-white);
+    transition: all 0.4s ease;
+}
+
+.read-more-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secondary);
+    transform: translateX(100%);
+    transition: all 0.4s ease-out;
+    z-index: -1;
+}
+
+.read-more-btn:hover::before {
+    transform: translateX(0);
+}
+
+.read-more-btn:hover .btn-icon {
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+}
+
+/* Skill and Portfolio Filter Buttons - Theme Match */
+.filter-btn, .skill-filter-btn {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem !important;
+}
+
+/* Ensure images in portfolio cards fill correctly */
+.portfolio-item .image img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+/* Scroll Progress Bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--color-secondary);
+  z-index: 9999;
+}
+
+/* Typing Effect CSS */
+.typing-text {
+  border-right: 2px solid var(--color-secondary);
+  padding-right: 5px;
+  animation: blinkCursor 0.75s step-end infinite;
+  color: var(--color-secondary);
+}
+.typing-text.typing {
+  animation: none;
+}
+@keyframes blinkCursor {
+  from, to { border-color: transparent }
+  50% { border-color: var(--color-secondary); }
+}
+
+/* Portfolio & Skill Filters */
+.portfolio-filters, .skill-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn, .skill-filter-btn {
+  padding: 0.6rem 1.8rem;
+  border-radius: 30px;
+  border: 1px solid var(--color-secondary);
+  background: transparent;
+  color: var(--color-white);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.4s ease-in-out;
+}
+
+.filter-btn.active, .filter-btn:hover, 
+.skill-filter-btn.active, .skill-filter-btn:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  box-shadow: 0 0 10px var(--color-secondary);
+}
+
+/* Portfolio Item Hide */
+.portfolio-item.hide {
+  display: none;
+}
+
+
+/* Refined Button Styling for Blogs and Filters */
+.skill-filter-btn, .filter-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    border: 1px solid var(--color-secondary);
+    background: transparent;
+    color: var(--color-white);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 0.3rem;
+}
+
+.skill-filter-btn.active, .skill-filter-btn:hover,
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+/* Fix Blog button alignment and appearance */
+.blog-text .main-btn {
+    display: inline-flex !important;
+    height: auto !important;
+    padding: 0.2rem 0 !important;
+    margin-top: 1rem;
+}
+
+.blog-text .main-btn .btn-text {
+    padding: 0.5rem 1.5rem !important;
+}
+
+.blog-text .main-btn .btn-icon {
+    padding: 0.6rem !important;
+}
+
+/* Ensure project images fill their containers nicely */
+.portfolio-item .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 @media screen and (max-width: 600px) {
   header {
     padding: 0 !important;
@@ -1080,6 +1375,7 @@ section {
 
   .portfolios {
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
   }
 
   .header-content .right-header {
@@ -1186,36 +1482,99 @@ section {
   }
 }
 
-#ask-me-anything {
-        margin-top: 60px;
-    }
 
-    .ask-container {
-        max-width: 700px;
-        margin: 0 auto;
-    }
+/* Authoritative Portfolio Grid & Image Styling */
+.portfolios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-gap: 1rem;
+  margin-top: 1.5rem;
+}
 
-    .ask-form .input-control {
-        margin-bottom: 15px;
-    }
+.portfolios .portfolio-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 180px; /* Container height */
+}
 
-    .ask-form input,
-    .ask-form textarea {
-        width: 100%;
-        padding: 12px;
-        background-color: #1e1e1e;
-        color: white;
-        border: 1px solid #3e3e3e;
-        border-radius: 8px;
-        font-size: 1rem;
-        resize: none;
-    }
+.portfolios .portfolio-item .image {
+  width: 100%;
+  height: 100%;
+}
 
-    .ask-form input:focus,
-    .ask-form textarea:focus {
-        border-color: #00ff99;
-        outline: none;
-    }
- 
+.portfolios .portfolio-item img {
+  width: 100% !important;
+  height: 100% !important; /* Matches container height exactly */
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 10px !important;
+  display: block !important;
+}
 
-/*# sourceMappingURL=styles.css.map  css have been changed for that buttons now no need to change */
+.portfolios .portfolio-item .hover-items {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+  padding: 1rem;
+  z-index: 5;
+}
+
+.portfolio-item:hover .hover-items {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.portfolios .portfolio-item .hover-items h3 {
+  font-size: 1.1rem;
+  color: var(--color-white);
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.portfolios .portfolio-item .hover-items .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolios .portfolio-item .hover-items .icons .icon {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+}
+
+.portfolios .portfolio-item .hover-items .icons .icon i {
+  font-size: 1.2rem;
+  color: var(--color-white);
+}
+
+.portfolios .portfolio-item .hover-items .icons .icon:hover {
+  background-color: var(--color-white);
+}
+
+.portfolios .portfolio-item .hover-items .icons .icon:hover i {
+  color: var(--color-primary);
+}
