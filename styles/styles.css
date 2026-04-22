@@ -1806,23 +1806,24 @@ section {
     display: flex;
     white-space: nowrap;
     animation: scrollMarquee 30s linear infinite;
-    gap: 5rem; /* Large, consistent spacing */
+    gap: 4rem; /* Standardized spacing */
 }
 
 .marquee-content i {
-    font-size: 4rem !important; /* Large icons */
+    font-size: 4rem !important;
     color: var(--color-grey-2);
-    transition: all 0.3s ease;
+    transition: all 1.5s ease; /* Increased transition duration */
     cursor: pointer;
     flex-shrink: 0;
 }
 
 .marquee-content i:hover {
     color: var(--color-secondary);
-    transform: scale(1.2);
+    transform: scale(1.3);
+    transition: all 0.2s ease; /* Fast entry, slow exit */
 }
 
 @keyframes scrollMarquee {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(calc(-50% - 2rem)); } /* Compensate for gap in loop */
 }
