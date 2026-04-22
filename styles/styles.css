@@ -1295,6 +1295,44 @@ section {
   50% { border-color: var(--color-secondary); }
 }
 
+/* Tech Marquee */
+.tech-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+    position: relative;
+    background: var(--color-grey-6);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.marquee-content {
+    display: flex;
+    width: calc(250px * 20);
+    animation: scroll 30s linear infinite;
+}
+
+.marquee-content i {
+    font-size: 3rem;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-grey-2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.marquee-content i:hover {
+    color: var(--color-secondary);
+    transform: scale(1.2);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 10)); }
+}
+
 /* Portfolio & Skill Filters */
 .portfolio-filters, .skill-filters {
   display: flex;

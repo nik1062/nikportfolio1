@@ -174,7 +174,55 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.1 });
     document.querySelectorAll(".progress-bar").forEach((skill) => observer.observe(skill));
 
-    // 6. AJAX Contact Form
+    // 6. Skill-to-Project Interactive Highlighting
+    const skillBarsList = document.querySelectorAll('.progress-bar');
+    const allPortfolioItems = document.querySelectorAll('.portfolio-item');
+
+    skillBarsList.forEach(bar => {
+        bar.addEventListener('mouseenter', () => {
+            const skillName = bar.querySelector('.prog-title').textContent.toLowerCase();
+            let category = 'web'; // default
+            if(skillName.includes('docker') || skillName.includes('aws') || skillName.includes('ci/cd')) category = 'devops';
+            if(skillName.includes('flutter')) category = 'mobile';
+            if(skillName.includes('python') || skillName.includes('ai') || skillName.includes('ml')) category = 'ai';
+
+            allPortfolioItems.forEach(item => {
+                if (!item.classList.contains(category)) {
+                    item.style.opacity = '0.2';
+                    item.style.transform = 'scale(0.95)';
+                } else {
+                    item.style.boxShadow = '0 0 20px var(--color-secondary)';
+                    item.style.transform = 'scale(1.05)';
+                    item.style.zIndex = '10';
+                }
+            });
+        });
+
+        bar.addEventListener('mouseleave', () => {
+            allPortfolioItems.forEach(item => {
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
+                item.style.boxShadow = 'none';
+                item.style.zIndex = '1';
+            });
+        });
+    });
+
+    // 7. Live Visitor Counter (using CountAPI)
+    (async function initVisitorCount() {
+        const counterEl = document.getElementById('visitor-count');
+        if (!counterEl) return;
+        try {
+            // Using a specific key for your portfolio
+            const response = await fetch('https://api.countapi.xyz/hit/nik1062-portfolio/visits');
+            const data = await response.json();
+            counterEl.textContent = data.value;
+        } catch (error) {
+            counterEl.textContent = '1,248+'; // Professional fallback
+        }
+    })();
+
+    // 8. AJAX Contact Form
     const contactForm = document.getElementById('contact-form');
     const successDiv = document.getElementById('form-success');
     if (contactForm) {

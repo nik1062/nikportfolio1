@@ -87,12 +87,14 @@
                         </a>
                     </div>
                 </div>
+                
                 <div class="right-about">
+                    <!-- 1. GitHub Repos -->
                     <div class="about-item">
                         <div class="abt-text">
-                            <p class="large-text" id="github-repos">10+</p>
+                            <p class="large-text" id="github-repos">26+</p>
                             <p class="small-text">GitHub <br /> Repositories</p>
-                            <ul style="font-size: 17px; margin-top: 5px; padding-left: 20px; list-style-type: disc;">
+                            <ul style="font-size: 14px; margin-top: 5px; padding-left: 15px; list-style-type: disc; color: var(--color-grey-2);">
                                 <li>Portfolio Website</li>
                                 <li>Jarvis AI Assistant</li>
                                 <li>Weather Forecast App</li>
@@ -101,17 +103,19 @@
                             </ul>
                         </div>
                     </div>
+                    <!-- 2. Learning Experience -->
                     <div class="about-item">
                         <div class="abt-text">
                             <p class="large-text">2+</p>
                             <p class="small-text">Years of <br /> learning experience</p>
                         </div>
                     </div>
+                    <!-- 3. Technologies Practiced -->
                     <div class="about-item">
                         <div class="abt-text">
                             <p class="large-text">5+</p>
                             <p class="small-text">Technologies <br /> practiced</p>
-                            <ul style="font-size: 17px; margin-top: 5px; padding-left: 20px; list-style-type: disc;">
+                            <ul style="font-size: 14px; margin-top: 5px; padding-left: 15px; list-style-type: disc; color: var(--color-grey-2);">
                                 <li>Frontend</li>
                                 <li>Backend & Full Stack</li>
                                 <li>Programming Languages</li>
@@ -120,23 +124,57 @@
                             </ul>
                         </div>
                     </div>
+                    <!-- 4. Courses / Certifications -->
                     <div class="about-item">
                         <div class="abt-text">
                             <p class="large-text">5+</p>
                             <p class="small-text">Courses / <br /> Certifications</p>
-                            <ul style="font-size: 17px; margin-top: 5px; padding-left: 20px; list-style-type: disc;">
-                                <li>Frontend Development </li>
-                                <li>Full Stack Web Development </li>
-                                <li>Python Programming </li>
+                            <ul style="font-size: 14px; margin-top: 5px; padding-left: 15px; list-style-type: disc; color: var(--color-grey-2);">
+                                <li>Frontend Development</li>
+                                <li>Full Stack Web Development</li>
+                                <li>Python Programming</li>
                                 <li>Data Analytics</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+                <!-- Full-Width GitHub Language Stats Row -->
+                <div style="width: 100%; margin-top: 20px; background: var(--color-grey-6); border-radius: 15px; padding: 1rem; border: 1px solid var(--color-grey-5);">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nik1062&layout=compact&theme=vision-friendly-dark&hide_border=true&bg_color=12181b&title_color=27AE60&text_color=b2becd" alt="Nikunj's Top Langs" style="width: 100%; height: auto;">
+                </div>
             </div>
             <div class="about-stats">
+
                 <h4 class="stat-title">My Skills</h4>
-                <div class="skill-filters portfolio-filters" style="margin-top: 2rem;">
-                    <button class="filter-btn skill-filter-btn active" data-skill="all">All Skills</button>
+
+                <!-- Tech Stack Marquee -->
+                <div class="tech-marquee">
+                    <div class="marquee-content">
+                        <i class="fab fa-flutter"></i>
+                        <i class="fab fa-docker"></i>
+                        <i class="fab fa-aws"></i>
+                        <i class="fab fa-react"></i>
+                        <i class="fab fa-node-js"></i>
+                        <i class="fab fa-python"></i>
+                        <i class="fab fa-js"></i>
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3-alt"></i>
+                        <i class="fas fa-database"></i>
+                        <!-- Duplicate for seamless loop -->
+                        <i class="fab fa-flutter"></i>
+                        <i class="fab fa-docker"></i>
+                        <i class="fab fa-aws"></i>
+                        <i class="fab fa-react"></i>
+                        <i class="fab fa-node-js"></i>
+                        <i class="fab fa-python"></i>
+                        <i class="fab fa-js"></i>
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3-alt"></i>
+                        <i class="fas fa-database"></i>
+                    </div>
+                </div>
+
+                <div class="skill-filters portfolio-filters" style="margin-top: 2rem;">                    <button class="filter-btn skill-filter-btn active" data-skill="all">All Skills</button>
                     <button class="filter-btn skill-filter-btn" data-skill="web">Web & Backend</button>
                     <button class="filter-btn skill-filter-btn" data-skill="mobile">Mobile</button>
                     <button class="filter-btn skill-filter-btn" data-skill="devops">DevOps & Cloud</button>
@@ -811,6 +849,12 @@
     </div>
     <div class="theme-btn">
         <i class="fas fa-adjust"></i>
+    </div>
+    
+    <!-- Visitor Counter & Signature -->
+    <div style="text-align: center; padding: 2rem 0; color: var(--color-grey-3); font-size: 0.8rem; border-top: 1px solid var(--color-grey-5);">
+        <p><i class="fas fa-eye"></i> Total Profile Views: <span id="visitor-count" style="color: var(--color-secondary); font-weight: bold;">Loading...</span></p>
+        <p>&copy; 2026 Nikunj Kumar. Handcrafted with <i class="fas fa-heart" style="color: #e25555;"></i></p>
     </div>
 
     <!-- Project Quick View Modal -->
